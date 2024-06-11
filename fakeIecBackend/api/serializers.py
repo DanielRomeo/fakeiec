@@ -1,12 +1,68 @@
 from rest_framework import serializers
-from blog.models import Blogpost, Author # import the models from the blog
+from voteapp.models import Ethnicity, Address,Vote, Voter # import the models from the blog
 
-class BlogpostSerializer(serializers.ModelSerializer):
+class EthnicitySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Blogpost
-        fields = '__all__'
+        model = Ethnicity
+        fields = ['id', 'name', 'language_group']
 
-class AuthorSerializer(serializers.ModelSerializer):
+class AddressSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Author
-        fields = '__all__'
+        model = Address
+        fields = ['id', 'province', 'district']
+
+class VoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vote
+        fields = ['id', 'national', 'provincial', 'regional']
+
+class VoterSerializer(serializers.ModelSerializer):
+    ethnicity = EthnicitySerializer()
+    address = AddressSerializer()
+    vote = VoteSerializer()
+
+    class Meta:
+        model = Voter
+        fields = ['id', 'firstname', 'lastname', 'idnumber', 'ethnicity', 'address', 'vote']
+
+    def create(self, validated_data):
+        ethnicity_data = validated_data.pop('ethnicity')
+        address_data = validated_data.pop('address')
+        vote_data = validated_data.pop('vote')
+
+        ethnicity = Ethnicity.objects.create(**ethnicity_data)
+        address = Address.objects.create(**address_data)
+        vote = Vote.objects.create(**vote_data)
+
+        voter = Voter.objects.create(
+            ethnicity=ethnicity,
+            address=address,
+            vote=vote,
+            **validated_data
+        )
+        return voter
+
+    def update(self, instance, validated_data):
+        ethnicity_data = validated_data.pop('ethnicity')
+        address_data = validated_data.pop('address')
+        vote_data = validated_data.pop('vote')
+
+        instance.firstname = validated_data.get('firstname', instance.firstname)
+        instance.lastname = validated_data.get('lastname', instance.lastname)
+        instance.idnumber = validated_data.get('idnumber', instance.idnumber)
+
+        instance.ethnicity.name = ethnicity_data.get('name', instance.ethnicity.name)
+        instance.ethnicity.language_group = ethnicity_data.get('language_group', instance.ethnicity.language_group)
+        instance.ethnicity.save()
+
+        instance.address.province = address_data.get('province', instance.address.province)
+        instance.address.district = address_data.get('district', instance.address.district)
+        instance.address.save()
+
+        instance.vote.national = vote_data.get('national', instance.vote.national)
+        instance.vote.provincial = vote_data.get('provincial', instance.vote.provincial)
+        instance.vote.regional = vote_data.get('regional', instance.vote.regional)
+        instance.vote.save()
+
+        instance.save()
+        return instance
