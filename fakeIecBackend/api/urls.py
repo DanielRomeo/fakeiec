@@ -25,12 +25,3 @@ urlpatterns = [
     path('votes/', vote_list, name='vote-list'),
     path('votes/<int:pk>/', vote_detail, name='vote-detail'),
 ]
-
-
-# urlpatterns = [
-#     path('getblogs', views.getBlogs),
-#     path('gedata', views.getData),
-    
-#     path('getblog/<str:id>', views.getBlog),
-#     path('getauthor/<str:id>', views.getAuthor)
-# ]
