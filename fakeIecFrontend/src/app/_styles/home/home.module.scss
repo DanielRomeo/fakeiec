@@ -1,0 +1,36 @@
+@use '../main.module.scss';
+
+// Importing the navbar
+// @use '../../_components/styles/MainNavbar.module.scss'; 
+
+.main{
+   background-color: white;
+   height: 100vh;
+   color: darkcyan;
+
+   .mainContainer{
+      margin-top: 40px;
+      padding: 10px;
+      // border: 1px solid red;
+
+      .mainRow{
+
+         .informationBox{
+            .informationBoxButtons{
+               .registerToVoteButton, .viewAnalyticsButton{
+                  border-radius: 0px;
+                  margin: 5px;
+                  .link{
+                     text-decoration: none;
+                     color: inherit
+                  }
+               }
+               .viewAnalyticsButton{
+                  background-color: main.$red;
+               }
+            }
+         }
+      }
+      
+   }
+}

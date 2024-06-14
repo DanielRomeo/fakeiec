@@ -1,0 +1,57 @@
+@use '../main.module.scss';
+
+
+.main{
+    height: 100vh;
+
+    .mainContainer{
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        // align-items: center;
+
+        .stepCard{
+            padding: 50px;
+            // color: red;
+            width: 500px;
+
+            .step1{ 
+                .step1inputBox{
+                    border-radius: 0px;
+                    &:focus{
+                        outline: none;
+                        box-shadow: none;
+                        border: 1px solid main.$green;
+                    }
+                }
+                .nextButton{
+                    // border-radius: 0px;
+                    border: 0px;
+                    margin-top: 10px;
+                    border-radius: 0px;
+                    background-color: main.$green;
+                    &:hover{
+                        background-color: main.$yellow;
+                        // background-color: red;
+                        // color: main.$dark-green;
+                        color: black;
+                        border: 1px solid black;
+                    }
+                }
+
+                .spanError{
+                    color: main.$red;
+                }
+            }
+
+            .step2{
+
+            }
+        }
+
+        
+
+        
+    }
+}

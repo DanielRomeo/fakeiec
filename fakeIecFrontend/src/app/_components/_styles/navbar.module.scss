@@ -1,0 +1,12 @@
+
+
+.githubButton{
+    background-color: black;
+    &:hover{
+        background-color: black;
+    }
+    .link{
+        text-decoration: none;
+        color: inherit;
+    }
+}
