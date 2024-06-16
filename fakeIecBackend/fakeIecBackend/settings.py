@@ -27,7 +27,13 @@ SECRET_KEY = 'django-insecure-vi-z@(i457yvy#os-(cs-2v)&+!h=#c*uo+7l!7#xjy_us8^x2
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['https://nordicrose.onrender.com',
+                 'nordicrose.onrender.com',
+                 'https://nordic-rose-six.vercel.app/',
+                 'nodeic-rose-six.verce.app',
+                 "localhost"]
 
 CORS_ALLOWED_ORIGINS = [
     "https://example.com",
