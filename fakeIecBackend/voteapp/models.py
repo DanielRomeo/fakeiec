@@ -26,6 +26,7 @@ class Vote(models.Model):
 class Voter(models.Model):
     firstname = models.CharField(max_length=50)
     lastname = models.CharField(max_length=50)
+    gender = models.CharField(null=True, max_length=10, choices=[('male', 'Male'), ('female', 'Female'), ('other', 'Other')])
     idnumber = models.CharField(max_length=20, unique=True)
     ethnicity = models.ForeignKey(Ethnicity, on_delete=models.SET_NULL, null=True)
     address = models.ForeignKey(Address, on_delete=models.SET_NULL, null=True)
