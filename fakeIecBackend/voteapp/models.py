@@ -16,9 +16,9 @@ class Address(models.Model):
         return f"{self.province} - {self.district}"
 
 class Vote(models.Model):
-    national = models.CharField(max_length=50)
-    provincial = models.CharField(max_length=50)
-    regional = models.CharField(max_length=50)
+    national = models.CharField(max_length=50, null=True)
+    provincial = models.CharField(max_length=50, null=True)
+    regional = models.CharField(max_length=50, null=True)
 
     def __str__(self):
         return f"National: {self.national}, Provincial: {self.provincial}, Regional: {self.regional}"
