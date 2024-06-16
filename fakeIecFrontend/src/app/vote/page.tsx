@@ -13,6 +13,9 @@ const Register: React.FC = () => {
 	const [formData, setFormData] = useState({
 		firstName: '',
 		lastName: '',
+		addressProvince: '',
+		addressDistrict: '',
+		ethniicity: '',
 		gender: '',
 		nationalVote: '',
 		provincialVote: '',

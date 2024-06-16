@@ -14,7 +14,7 @@
         .stepCard{
             padding: 50px;
             // color: red;
-            width: 500px;
+            width: 900px;
 
             .step1{ 
                 .step1inputBox{
@@ -46,7 +46,13 @@
             }
 
             .step2{
-
+                .container{
+                    .voteLabel{
+                        color: main.$green;
+                        font-size: 25px;
+                        font-weight: bold;
+                    }
+                }
             }
         }
 

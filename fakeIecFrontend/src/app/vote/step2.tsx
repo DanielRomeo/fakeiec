@@ -24,64 +24,72 @@ const Step2: React.FC<Step2Props> = ({ onPrevious, onSubmit, defaultValues }) =>
     onSubmit(data);
   };
 
-  const options = ["Option 1", "Option 2", "Option 3"]; // Replace these with your actual options
+  const options = ["ANC", "PAC", "BOSA", "IFP", "DA", "MK"]; // Replace these with your actual options
 
   return (
-    <div>
+    <div className={`${Styles.step2}`}>
     	<form onSubmit={handleSubmit(handleFinalSubmit)}>
+			<Container className={`${Styles.container}`}>
+				<Row>
+					{/* NATIONAL VOTE */}
+					<Col lg={4} md={4} sm={12}>
+						<label className={Styles.voteLabel}>NATIONAL VOTE</label>
+						{options.map(option => (
+							<div key={option}>
+								<input
+									type="radio"
+									value={option}
+									{...register('nationalVote', { required: 'National vote is required' })}
+								/>
+								<label> &nbsp; { option}</label>
+								<hr style={{"borderTop": "dotted 1px"}} />
+							</div>
+						))}
+						{errors.nationalVote && <span>{errors.nationalVote.message}</span>}
+					</Col>
 
-			{/* NATIONAL VOTE */}
-			<div>
-				<label>National Vote</label>
-				{options.map(option => (
-					<div key={option}>
-					<input
-						className='form-control'
-						type="radio"
-						value={option}
-						{...register('nationalVote', { required: 'National vote is required' })}
-					/>
-					<label>{option}</label>
-					</div>
-				))}
-				{errors.nationalVote && <span>{errors.nationalVote.message}</span>}
-			</div>
+					{/* PROVINCIAL VOTE */}
+					<Col lg={4} md={4} sm={12}>
+						<label className={Styles.voteLabel}>PROVINCIAL VOTE</label>
+						{options.map(option => (
+							<div key={option}>
+							<input
+							// className='form-control'
+								type="radio"
+								value={option}
+								{...register('provincialVote', { required: 'Provincial vote is required' })}
+							/>
+							<label> &nbsp; {option}</label>
+							<hr style={{"borderTop": "dotted 1px"}} />
+							</div>
+						))}
+						{errors.provincialVote && <span>{errors.provincialVote.message}</span>}
+					</Col>
 
-			{/* PROVINCIAL VOTE */}
-			<div>
-				<label>Provincial Vote</label>
-				{options.map(option => (
-					<div key={option}>
-					<input
-					className='form-control'
-						type="radio"
-						value={option}
-						{...register('provincialVote', { required: 'Provincial vote is required' })}
-					/>
-					<label>{option}</label>
-					</div>
-				))}
-				{errors.provincialVote && <span>{errors.provincialVote.message}</span>}
-			</div>
+					{/* REGIONAL/DISTRICT VOTE */}
+					<Col lg={4} md={4} sm={12}>
+						<label className={Styles.voteLabel}>REGIONAL VOTE</label>
+						{options.map(option => (
+							<div key={option}>
+							<input
+								type="radio"
+								value={option}
+								{...register('regionalVote', { required: 'Regional vote is required' })}
+							/>
+							<label> &nbsp; {option}</label>
+							<hr style={{"borderTop": "dotted 1px"}} />
+							</div>
+						))}
+						{errors.regionalVote && <span>{errors.regionalVote.message}</span>}
+					</Col>
+				</Row>
 
-			{/* REGIONAL/DISTRICT VOTE */}
-			<div>
-				<label>Regional Vote</label>
-				{options.map(option => (
-					<div key={option}>
-					<input
-						type="radio"
-						value={option}
-						{...register('regionalVote', { required: 'Regional vote is required' })}
-					/>
-					<label>{option}</label>
-					</div>
-				))}
-				{errors.regionalVote && <span>{errors.regionalVote.message}</span>}
-			</div>
-
-			<button type="button" onClick={onPrevious}>Previous</button>
-			<button type="submit">Submit</button>
+				<Row>
+					<button type="button" onClick={onPrevious}>Previous</button>
+					<button type="submit">Submit</button>
+				</Row>
+			</Container>
+			
       	</form>
     </div>
   );
