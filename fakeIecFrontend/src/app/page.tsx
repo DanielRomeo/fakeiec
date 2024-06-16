@@ -9,10 +9,12 @@ import { FaGithub } from "react-icons/fa";
 import { IoLogoYoutube } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
 
-// navbar and footer:
+// navbar, footer and components:
 import MainNavbar from './_components/navbar'
 import WideCard from './_components/wide_card'
 import ChartCard from './home/chartCard'
+import TotalVotesCard from './home/TotalVotesCard'
+import VoterTurnoutCard from './home/VoterTurnoutCard'
 
 // styles:
 import Styles from './_styles/home/home.module.scss'
@@ -56,6 +58,14 @@ export default function Home() {
 						</Col>
 
 					</Row>
+
+					<Row className={`${Styles.secondaryRow}`}>
+						<TotalVotesCard></TotalVotesCard>
+						<VoterTurnoutCard></VoterTurnoutCard>
+						
+					</Row>
+
+					
 				</Container>
 		</div>
 	);
