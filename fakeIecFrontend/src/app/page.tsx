@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link';
 import React, { useCallback, useState } from "react";
-import {Container, Row, Col, Button, Card, Image, CardText} from 'react-bootstrap';
+import {Container, Row, Col, Button, Card, Image, CardText, CardBody} from 'react-bootstrap';
 
 // social icons:
 import { FaXTwitter, FaYoutube } from "react-icons/fa6";
@@ -15,6 +15,8 @@ import WideCard from './_components/wide_card'
 import ChartCard from './home/chartCard'
 import TotalVotesCard from './home/TotalVotesCard'
 import VoterTurnoutCard from './home/VoterTurnoutCard'
+
+import RegistrationAnalysisChart from './home/RegistrationAnalysisChart'
 
 // styles:
 import Styles from './_styles/home/home.module.scss'
@@ -36,7 +38,7 @@ export default function Home() {
 					<Row className={Styles.mainRow}>
 						<Col className={``} lg={6} md={6} sm={12}>
 							<div className={Styles.informationBox}>
-								<h1>Fake Iec Application</h1>
+								<h1>FAKE IEC APPLICATION</h1>
 								<p>Fake Iec application is software developed by Daniel Mamphekgo and friends to illustrate competency in data science & working with data analytically.</p>
 								<hr/>
 								<p>The application is meant to demonstrate voting on a website & viewing the voting statistics.</p>
@@ -62,7 +64,29 @@ export default function Home() {
 					<Row className={`${Styles.secondaryRow}`}>
 						<TotalVotesCard></TotalVotesCard>
 						<VoterTurnoutCard></VoterTurnoutCard>
-						
+					</Row>
+
+					<hr />
+
+					<Row className={`${Styles.registrationAnalysisRow}`}>
+						<h3>
+							Registration Analysis
+						</h3>
+
+						<Card className={`shadow-lg border-0 rounded-0`}>
+							<CardBody>
+								<Row>
+									<Col lg={6} md={6} sm={12}>
+									
+									</Col>
+
+									<Col lg={6} md={6} sm={12}>
+									something else here bro
+									</Col>
+								</Row>
+								
+							</CardBody>
+						</Card>
 					</Row>
 
 					
