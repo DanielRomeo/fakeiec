@@ -13,8 +13,11 @@ interface Step1FormData {
   lastName: string;
   ethnicity: string;
   gender: string;
-  province: string;
-  district: string;
+  addressProvince: string;
+  addressDistrict: string;
+  nationalVote: string,
+	provincialVote: string,
+	regionalVote: string,
 }
 
 const addressesArray = [
@@ -38,14 +41,14 @@ const Step1: React.FC<Step1Props> = ({ onNext, defaultValues }) => {
     watch
   } = useForm<Step1FormData>({ defaultValues });
 
-  const [selectedProvince, setSelectedProvince] = useState<string>(defaultValues.province);
+  const [selectedProvince, setSelectedProvince] = useState<string>(defaultValues.addressProvince);
 
   const onSubmit: SubmitHandler<Step1FormData> = (data) => {
     onNext(data);
   };
 
   const provinceOptions = addressesArray.map((item) => item[0]);
-  const districtOptions = selectedProvince ? addressesArray.find((item) => item[0] === selectedProvince)?.[1] : [];
+  const districtOptions: any = selectedProvince ? addressesArray.find((item) => item[0] === selectedProvince)?.[1] : [];
 
   return (
     <div className={`${Styles.step1} `}>
@@ -104,6 +107,7 @@ const Step1: React.FC<Step1Props> = ({ onNext, defaultValues }) => {
                 control={control}
                 name="gender"
                 render={({ field: { value, onChange } }) => (
+
                   <select
                     className={`${Styles.step1inputBox} form-control`}
                     onChange={onChange}
@@ -125,27 +129,38 @@ const Step1: React.FC<Step1Props> = ({ onNext, defaultValues }) => {
               <label htmlFor="province">Province</label>
               <Controller
                 control={control}
-                name="province"
+                name="addressProvince"
                 render={({ field: { value, onChange } }) => (
+
+
                   <select
                     className={`${Styles.step1inputBox} form-control`}
                     onChange={(e) => {
                       onChange(e);
                       setSelectedProvince(e.target.value);
                     }}
-                    value={value}
-                  >
+                    value={value}>
                     <option></option>
-                    {provinceOptions.map((province) => (
-                      <option key={province} value={province}>
-                        {province}
-                      </option>
-                    ))}
+
+                    {
+					
+					provinceOptions ? (provinceOptions.map((province:any) => (
+						<option key={province} value={province}>
+							{province}
+						</option>
+						))):
+					(<option></option>)
+
+					
+					
+					}
                   </select>
+
+				  
                 )}
               />
-              {errors.province && (
-                <span className={Styles.spanError}>{errors.province.message}</span>
+              {errors.addressProvince && (
+                <span className={Styles.spanError}>{errors.addressProvince.message}</span>
               )}
             </div>
 
@@ -153,7 +168,7 @@ const Step1: React.FC<Step1Props> = ({ onNext, defaultValues }) => {
               <label htmlFor="district">District</label>
               <Controller
                 control={control}
-                name="district"
+                name="addressDistrict"
                 render={({ field: { value, onChange } }) => (
                   <select
                     className={`${Styles.step1inputBox} form-control`}
@@ -161,16 +176,23 @@ const Step1: React.FC<Step1Props> = ({ onNext, defaultValues }) => {
                     value={value}
                   >
                     <option></option>
-                    {districtOptions?.map((district) => (
-                      <option key={district} value={district}>
-                        {district}
-                      </option>
-                    ))}
+                    {
+					
+					districtOptions ? (districtOptions.map((district:any) => (
+						<option key={district} value={district}>
+							{district}
+						</option>
+						))):
+					(<option></option>)
+
+					
+					
+					}
                   </select>
                 )}
               />
-              {errors.district && (
-                <span className={Styles.spanError}>{errors.district.message}</span>
+              {errors.addressDistrict && (
+                <span className={Styles.spanError}>{errors.addressDistrict.message}</span>
               )}
             </div>
 

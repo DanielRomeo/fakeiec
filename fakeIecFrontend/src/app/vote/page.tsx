@@ -15,7 +15,7 @@ const Register: React.FC = () => {
 		lastName: '',
 		addressProvince: '',
 		addressDistrict: '',
-		ethniicity: '',
+		ethnicity: '',
 		gender: '',
 		nationalVote: '',
 		provincialVote: '',

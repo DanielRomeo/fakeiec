@@ -54,7 +54,7 @@ export default function Home() {
 						</Col>
 
 						<Col className={``} lg={6} md={6} sm={12}>
-							<ChartCard>{}</ChartCard>
+							<ChartCard>gang</ChartCard>
 						</Col>
 
 					</Row>
