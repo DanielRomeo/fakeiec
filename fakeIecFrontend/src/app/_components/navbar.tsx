@@ -15,26 +15,25 @@ const MainNavbar = () => {
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
 				<Navbar.Collapse id="basic-navbar-nav">
 					<Nav className="me-auto">
-						<Link href="/" passHref>
-						<Nav.Link>Home</Nav.Link>
-						</Link>
+						<Nav.Link href="/">Home</Nav.Link>
+						
+						<Nav.Link href="/votestats">Vote Statistics</Nav.Link>
 
-
-						<NavDropdown title="Province stats" id="basic-nav-dropdown">
+						{/* <NavDropdown title="Province stats" id="basic-nav-dropdown">
 							<NavDropdown.Item href="/features">Limpopo</NavDropdown.Item>
 							<NavDropdown.Item href="/contact">Gautent</NavDropdown.Item>
 							<NavDropdown.Item href="/contact">Northern Cape</NavDropdown.Item>
-						</NavDropdown>
+						</NavDropdown> */}
 						
-						<NavDropdown title="Dropdown" id="basic-nav-dropdown">
+						{/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
 							<NavDropdown.Item href="/features">Features</NavDropdown.Item>
 							<NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
-						</NavDropdown>
+						</NavDropdown> */}
 					</Nav>
 
 					<nav className="mx-auto">
 						<Button className={` shadow-lg border-0 rounded-0 ${Styles.githubButton}`}>
-							<Link className={`${Styles.link}`} href="/github.com/danielromeo/fakeiec">Github</Link>
+							<Link className={`${Styles.link}`} href="https://github.com/danielromeo/fakeiec">Github</Link>
 						</Button>
 					</nav>
 				</Navbar.Collapse>

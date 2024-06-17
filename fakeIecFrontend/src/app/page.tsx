@@ -57,7 +57,17 @@ export default function Home() {
 						</Col>
 
 						<Col className={``} lg={6} md={6} sm={12}>
-							<ChartCard>gang</ChartCard>
+							<Card className={`shadow-lg border-0 rounded-0`}>
+								<CardBody>
+									<Image
+										src="/age_group_distribution-1.png"
+										width={500}
+										height={400}
+										alt="Picture of the author that uses the platform to write journals."
+									/>
+										
+								</CardBody>
+							</Card>
 						</Col>
 
 					</Row>
@@ -67,7 +77,7 @@ export default function Home() {
 						<VoterTurnoutCard></VoterTurnoutCard>
 					</Row>
 
-					<hr />
+					<br />
 
 					<Row className={`${Styles.registrationAnalysisRow}`}>
 						<h3>
