@@ -15,8 +15,9 @@ import WideCard from './_components/wide_card'
 import ChartCard from './home/chartCard'
 import TotalVotesCard from './home/TotalVotesCard'
 import VoterTurnoutCard from './home/VoterTurnoutCard'
+import ResponsiveImage from './_components/ResponsiveImage'
 
-import RegistrationAnalysisChart from './home/RegistrationAnalysisChart'
+// import RegistrationAnalysisChart from './home/RegistrationAnalysisChart'
 
 // styles:
 import Styles from './_styles/home/home.module.scss'
@@ -78,10 +79,58 @@ export default function Home() {
 								<Row>
 									<Col lg={6} md={6} sm={12}>
 									
+										<Image
+											
+											src="/participation-1.png"
+											width={500}
+											height={400}
+											alt="Picture of the author that uses the platform to write journals."
+										/>
 									</Col>
 
 									<Col lg={6} md={6} sm={12}>
-									something else here bro
+
+										<Card.Title>Based off of the analytical analysis of the data: </Card.Title>
+										
+											<p>
+												The findings are suggestive that a little over a third of registered voters, voted. Just under a third of all registered voters did not vote.
+											</p>
+
+											<p>
+												Total number of people that are in the database(that are registered voters) are <span style={{color: 'green'}}>1000</span>. The number people who DID vote is <span style={{color: 'green'}}>685</span>. 
+											</p>
+									</Col>
+								</Row>
+								
+							</CardBody>
+						</Card>
+					</Row>
+					<br />
+					<Row className={`${Styles.genderVotesRow}`}>
+						<h3>
+							Gender Vote Analysis
+						</h3>
+
+						<Card className={`shadow-lg border-0 rounded-0`}>
+							<CardBody>
+								<Row>
+									<Col lg={6} md={6} sm={12}>
+										<Image
+											src="/gender_distribution-1.png"
+											width={500}
+											height={400}
+											alt="Picture of the author that uses the platform to write journals."
+										/>
+									</Col>
+
+									<Col lg={6} md={6} sm={12}>
+										<Card.Title>Based off of the analytical analysis of the data: </Card.Title>
+											<p>
+												The findings are suggestive that there were more males who voted than there were females.
+											</p>
+											<p>
+												Based off of the previous findings regarding <span style={{color: 'green'}}>Registration Analysis</span>, if 50.3% of the people who voted were male, then it means the total number of male voters is <span style={{color: 'green'}}>345</span>
+											</p>
 									</Col>
 								</Row>
 								
