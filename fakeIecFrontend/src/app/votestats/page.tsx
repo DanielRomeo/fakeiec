@@ -6,22 +6,24 @@ import MainNavbar from '../_components/navbar'
 type ImageLayout = "fill" | "fixed" | "intrinsic" | "responsive" | undefined;
 import Styles from '../_styles/votestats/votestats.module.scss'
 
-const ResponsiveImage = ({ src, alt, width, height }:any) => {
-	return (
-	  <div className={Styles.responsiveImage}>
-		<Image
-		  src={src}
-		  alt={alt}
-		  layout="responsive"
-		  width={width}
-		  height={height}
-		  sizes="(max-width: 768px) 100vw, 
-				 (max-width: 1200px) 50vw, 
-				 33vw"
-		/>
-	  </div>
-	);
-  };
+import ResponsiveImage from '../_components/ResponsiveImage';
+
+// const ResponsiveImage = ({ src, alt, width, height }:any) => {
+// 	return (
+// 	  <div className={Styles.responsiveImage}>
+// 		<Image
+// 		  src={src}
+// 		  alt={alt}
+// 		  layout="responsive"
+// 		  width={width}
+// 		  height={height}
+// 		  sizes="(max-width: 768px) 100vw, 
+// 				 (max-width: 1200px) 50vw, 
+// 				 33vw"
+// 		/>
+// 	  </div>
+// 	);
+//   };
 
 function VoteStatsPage() {
 
@@ -41,7 +43,7 @@ function VoteStatsPage() {
 						<CardBody>
 							<Row>
 								<Col lg={7} md={12} sm={12}>
-									<ResponsiveImage width={400} height={400} src={"/votes_per_party_distribution-1.png"}></ResponsiveImage>
+									<ResponsiveImage width={400} height={400} src={"/votes_per_party_distribution-1.png	"}></ResponsiveImage>
 								</Col>
 
 								<Col lg={5} md={12} sm={12}>
@@ -65,17 +67,12 @@ function VoteStatsPage() {
 					<h3 className={Styles.headersInRows}>
 						Votes per Ethnical background
 					</h3>
-
+					
 					<Card className={`shadow-lg border-0 rounded-0`}>
 						<CardBody>
 							<Row>
 								<Col lg={7} md={12} sm={12}>
-									<Image
-										src="/ethnicity_distribution-1.png"
-										width={500}
-										height={400}
-										alt="Picture of the author that uses the platform to write journals."
-									/>
+								<ResponsiveImage width={400} height={400} src={"/ethnicity_distribution-1.png"}></ResponsiveImage>
 								</Col>
 
 								<Col lg={5} md={12} sm={12}>

@@ -17,45 +17,9 @@ import TotalVotesCard from './home/TotalVotesCard'
 import VoterTurnoutCard from './home/VoterTurnoutCard'
 import ResponsiveImage from './_components/ResponsiveImage'
 
-// import RegistrationAnalysisChart from './home/RegistrationAnalysisChart'
 
 // styles:
 import Styles from './_styles/home/home.module.scss'
-
-type ImageLayout = "fill" | "fixed" | "intrinsic" | "responsive" | undefined;
-
-const ImageComponent1: React.FC<{ layout?: ImageLayout }> = ({layout}) =>{
-	return (
-		<div>
-			<Image
-				className={`${Styles.image}`}
-				src="/participation-1.png"
-				alt="Picture of the author that uses the platform to write journals."
-				layout={layout } // Type assertion
-				width="350vh"  // Adjust based on desired width on different viewports
-				height="250vh"
-			/>
-		</div>
-	)
-}
-
-
-
-const ImageComponent2: React.FC<{ layout?: ImageLayout }> = ({layout}) =>{
-	return (
-		<div>
-			<Image
-				className={`${Styles.image}`}
-				src="/gender_distribution-1.png"
-				alt="Picture of the author that uses the platform to write journals."
-				layout={layout } // Type assertion
-				width="350vh"  // Adjust based on desired width on different viewports
-				height="250vh"
-			/>
-		</div>
-	)
-}
-
 
 function Home(){
 
@@ -81,7 +45,7 @@ function Home(){
 							
 								<div className={Styles.informationBoxButtons}>
 									<Button className={` shadow-lg border-0 rounded-0 ${Styles.registerToVoteButton}`}>
-										 <Link className={`${Styles.link}`} href="/register">Register To Vote</Link>
+										 <Link className={`${Styles.link}`} href="/vote">Register To Vote</Link>
 									</Button>
 
 									<Button className={`shadow-lg border-0 rounded-0 ${Styles.viewAnalyticsButton}`}>
@@ -94,13 +58,7 @@ function Home(){
 						<Col className={`${Styles.mainRowCol2}`} lg={6} md={12} sm={12}>
 							<Card className={` ${Styles.imageCard} shadow-lg border-0 rounded-0`}>
 								<CardBody className={` ${Styles.cardBody}`}>
-									<Image
-										className={` ${Styles.card}`}
-										src="/age_group_distribution-1.png"
-										width={400}
-										height={300}
-										alt="Picture of the author that uses the platform to write journals."
-									/>
+									<ResponsiveImage width={400} height={400} src={"/age_group_distribution-1.png"}></ResponsiveImage>
 										
 								</CardBody>
 							</Card>
@@ -124,7 +82,7 @@ function Home(){
 							<CardBody className={`${Styles.registrationAnalysisCardBody}`}>
 								<Row className={`${Styles.registrationAnalysisCardRow}`}>
 									<Col className={`${Styles.imageCol}`} lg={6} md={12} sm={12}>
-										<ImageComponent1></ImageComponent1>
+										<ResponsiveImage width={400} height={400} src={"/participation-1.png"}></ResponsiveImage>
 									</Col>
 
 									<Col className={`${Styles.infoCol}`} lg={6} md={12} sm={12}>
@@ -151,7 +109,7 @@ function Home(){
 							<CardBody>
 								<Row>
 									<Col lg={6} md={12} sm={12}>
-										<ImageComponent2></ImageComponent2>
+									<ResponsiveImage width={400} height={400} src={"/gender_distribution-1.png"}></ResponsiveImage>
 									</Col>
 
 									<Col lg={6} md={12} sm={12}>

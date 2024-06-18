@@ -8,17 +8,21 @@ interface ResponsiveImageProps {
   height: number;
 }
 
-const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ src, alt, width, height }) => {
-  return (
-    <div style={{ position: 'relative', width: '100%', paddingBottom: `${(height / width) * 100}%` }}>
-      <Image
-        src={src}
-        alt={alt}
-        layout="fill"
-        objectFit="cover"
-      />
-    </div>
-  );
-};
+const ResponsiveImage = ({ src, alt, width, height }:any) => {
+	return (
+	  <div className={``}>
+		<Image
+		  src={src}
+		  alt={alt}
+		  layout="responsive"
+		  width={width}
+		  height={height}
+		  sizes="(max-width: 768px) 100vw, 
+				 (max-width: 1200px) 50vw, 
+				 33vw"
+		/>
+	  </div>
+	);
+  };
 
 export default ResponsiveImage;
