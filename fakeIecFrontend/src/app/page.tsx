@@ -22,7 +22,42 @@ import ResponsiveImage from './_components/ResponsiveImage'
 // styles:
 import Styles from './_styles/home/home.module.scss'
 
-export default function Home() {
+type ImageLayout = "fill" | "fixed" | "intrinsic" | "responsive" | undefined;
+
+const ImageComponent1: React.FC<{ layout?: ImageLayout }> = ({layout}) =>{
+	return (
+		<div>
+			<Image
+				className={`${Styles.image}`}
+				src="/participation-1.png"
+				alt="Picture of the author that uses the platform to write journals."
+				layout={layout } // Type assertion
+				width="350vh"  // Adjust based on desired width on different viewports
+				height="250vh"
+			/>
+		</div>
+	)
+}
+
+
+
+const ImageComponent2: React.FC<{ layout?: ImageLayout }> = ({layout}) =>{
+	return (
+		<div>
+			<Image
+				className={`${Styles.image}`}
+				src="/gender_distribution-1.png"
+				alt="Picture of the author that uses the platform to write journals."
+				layout={layout } // Type assertion
+				width="350vh"  // Adjust based on desired width on different viewports
+				height="250vh"
+			/>
+		</div>
+	)
+}
+
+
+function Home(){
 
 	const [height, setHeight] = useState<number>(0); // State to store calculated height
 	const handleLoadComplete = (img: any) => {
@@ -89,13 +124,7 @@ export default function Home() {
 							<CardBody className={`${Styles.registrationAnalysisCardBody}`}>
 								<Row className={`${Styles.registrationAnalysisCardRow}`}>
 									<Col className={`${Styles.imageCol}`} lg={6} md={12} sm={12}>
-										<Image
-											className={`${Styles.image}`}
-											src="/participation-1.png"
-											width={400}
-											height={300}
-											alt="Picture of the author that uses the platform to write journals."
-										/>
+										<ImageComponent1></ImageComponent1>
 									</Col>
 
 									<Col className={`${Styles.infoCol}`} lg={6} md={12} sm={12}>
@@ -122,12 +151,7 @@ export default function Home() {
 							<CardBody>
 								<Row>
 									<Col lg={6} md={12} sm={12}>
-										<Image
-											src="/gender_distribution-1.png"
-											width={500}
-											height={400}
-											alt="Picture of the author that uses the platform to write journals."
-										/>
+										<ImageComponent2></ImageComponent2>
 									</Col>
 
 									<Col lg={6} md={12} sm={12}>
@@ -150,3 +174,5 @@ export default function Home() {
 		</div>
 	);
 }
+
+export default Home;

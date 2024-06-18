@@ -3,12 +3,29 @@ import React, { useState } from 'react';
 import Image from 'next/image'
 import {Row, Col, Container, Card, CardBody} from 'react-bootstrap'
 import MainNavbar from '../_components/navbar'
-
-// import styles
-// import Styles from '../_styles/votestats/votestats.module.scss'
+type ImageLayout = "fill" | "fixed" | "intrinsic" | "responsive" | undefined;
 import Styles from '../_styles/votestats/votestats.module.scss'
 
-const VoteStatsPage: React.FC = () => {
+const ResponsiveImage = ({ src, alt, width, height }:any) => {
+	return (
+	  <div className={Styles.responsiveImage}>
+		<Image
+		  src={src}
+		  alt={alt}
+		  layout="responsive"
+		  width={width}
+		  height={height}
+		  sizes="(max-width: 768px) 100vw, 
+				 (max-width: 1200px) 50vw, 
+				 33vw"
+		/>
+	  </div>
+	);
+  };
+
+function VoteStatsPage() {
+
+
 	
 	return (
 		<div className={`${Styles.main}`}>
@@ -24,12 +41,7 @@ const VoteStatsPage: React.FC = () => {
 						<CardBody>
 							<Row>
 								<Col lg={7} md={12} sm={12}>
-									<Image
-										src="/votes_per_party_distribution-1.png"
-										width={500}
-										height={400}
-										alt="Picture of the author that uses the platform to write journals."
-									/>
+									<ResponsiveImage width={400} height={400} src={"/votes_per_party_distribution-1.png"}></ResponsiveImage>
 								</Col>
 
 								<Col lg={5} md={12} sm={12}>
