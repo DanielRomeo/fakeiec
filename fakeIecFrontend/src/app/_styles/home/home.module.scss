@@ -14,22 +14,56 @@
       // border: 1px solid red;
 
       .mainRow{
+         @media (max-width: 991px) {
+            // background-color: green;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+         }
 
-         .informationBox{
-            .informationBoxButtons{
-               .registerToVoteButton, .viewAnalyticsButton{
-                  border-radius: 0px;
-                  margin: 5px;
-                  .link{
-                     text-decoration: none;
-                     color: inherit
+         .mainRowCol1{
+            // background-color: green;
+
+            .informationBox{
+               .informationBoxButtons{
+                  .registerToVoteButton, .viewAnalyticsButton{
+                     border-radius: 0px;
+                     margin: 5px;
+                     .link{
+                        text-decoration: none;
+                        color: inherit
+                     }
                   }
-               }
-               .viewAnalyticsButton{
-                  background-color: main.$red;
+                  .viewAnalyticsButton{
+                     background-color: main.$red;
+                  }
                }
             }
          }
+         .mainRowCol2{
+            // border: 1px solid red;
+
+            .imageCard{
+               
+                  .cardBody{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+
+
+                     .card{
+                        // border: 1px solid green;
+                     }
+                  }
+
+                  
+               
+            }
+         }
+
+         
       }
 
       .secondaryRow{

@@ -37,7 +37,7 @@ export default function Home() {
 				<Container className={Styles.mainContainer}>
 
 					<Row className={Styles.mainRow}>
-						<Col className={``} lg={6} md={6} sm={12}>
+						<Col className={`${Styles.mainRowCol1}`} lg={6} md={12} sm={12}>
 							<div className={Styles.informationBox}>
 								<h1>FAKE IEC APPLICATION</h1>
 								<p>Fake Iec application is software developed by Daniel Mamphekgo and friends to illustrate competency in data science & working with data analytically.</p>
@@ -56,13 +56,14 @@ export default function Home() {
 							</div>
 						</Col>
 
-						<Col className={``} lg={6} md={6} sm={12}>
-							<Card className={`shadow-lg border-0 rounded-0`}>
-								<CardBody>
+						<Col className={`${Styles.mainRowCol2}`} lg={6} md={12} sm={12}>
+							<Card className={` ${Styles.imageCard} shadow-lg border-0 rounded-0`}>
+								<CardBody className={` ${Styles.cardBody}`}>
 									<Image
+										className={` ${Styles.card}`}
 										src="/age_group_distribution-1.png"
-										width={500}
-										height={400}
+										width={400}
+										height={300}
 										alt="Picture of the author that uses the platform to write journals."
 									/>
 										
