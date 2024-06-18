@@ -42,24 +42,19 @@
             }
          }
          .mainRowCol2{
-            // border: 1px solid red;
-
             .imageCard{
                
-                  .cardBody{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        align-items: center;
+               .cardBody{
+                     display: flex;
+                     flex-direction: row;
+                     justify-content: center;
+                     align-items: center;
 
 
-                     .card{
-                        // border: 1px solid green;
-                     }
+                  .card{
+                     // border: 1px solid green;
                   }
-
-                  
-               
+               }
             }
          }
 
@@ -69,7 +64,35 @@
       .secondaryRow{
          margin-top: 50px;
       }
+
       .registrationAnalysisRow{
+        .registrationAnalysisCard{
+            .registrationAnalysisCardBody{
+
+
+               //  I changed the lg, md and sm on the page and realized that this code was not needed anymore
+               .registrationAnalysisCardRow{
+                  // display: flex;
+                  // flex-direction: column;
+                  // // justify-content: center;
+                  // align-items: center;
+
+
+                  // .imageCol{
+                  //    width: 80%;
+                  //    border: 1px solid red;
+                  //    align-items: center;
+                  //    .image{
+                  //    }
+                  // }
+                  // .infoCol{
+                  //    width: 80%;
+                  //    border: 1px solid green;
+                  // }
+               }
+
+            }
+        }
          
       }
 

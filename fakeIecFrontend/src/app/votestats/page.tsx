@@ -23,7 +23,7 @@ const VoteStatsPage: React.FC = () => {
 					<Card className={`shadow-lg border-0 rounded-0`}>
 						<CardBody>
 							<Row>
-								<Col lg={6} md={6} sm={12}>
+								<Col lg={7} md={12} sm={12}>
 									<Image
 										src="/votes_per_party_distribution-1.png"
 										width={500}
@@ -32,7 +32,7 @@ const VoteStatsPage: React.FC = () => {
 									/>
 								</Col>
 
-								<Col lg={6} md={6} sm={12}>
+								<Col lg={5} md={12} sm={12}>
 									<Card.Title>Based off of the analytical analysis of the data: </Card.Title>
 										<p>
 											The graph on the left shows the total number of votes each political party recieved in the election, and out of a total of 685 votes:
@@ -57,7 +57,7 @@ const VoteStatsPage: React.FC = () => {
 					<Card className={`shadow-lg border-0 rounded-0`}>
 						<CardBody>
 							<Row>
-								<Col lg={6} md={6} sm={12}>
+								<Col lg={7} md={12} sm={12}>
 									<Image
 										src="/ethnicity_distribution-1.png"
 										width={500}
@@ -66,7 +66,7 @@ const VoteStatsPage: React.FC = () => {
 									/>
 								</Col>
 
-								<Col lg={6} md={6} sm={12}>
+								<Col lg={5} md={12} sm={12}>
 									<Card.Title>Based off of the analytical analysis of the data: </Card.Title>
 										<p>The data shows that out of a total of <span style={{color: 'green'}}>685 votes</span>, the coloured ethnicity is the group who voted the most with a total of <span style={{color: 'green'}}>275 votes</span>. </p>
 										<p>The black ethnicity is the group with the least voter confidence, only <span style={{color: 'green'}}>230</span> of them showed up to the polls. </p>

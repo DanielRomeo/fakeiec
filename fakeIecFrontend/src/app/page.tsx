@@ -85,31 +85,27 @@ export default function Home() {
 							Registration Analysis
 						</h3>
 
-						<Card className={`shadow-lg border-0 rounded-0`}>
-							<CardBody>
-								<Row>
-									<Col lg={6} md={6} sm={12}>
-									
+						<Card className={`${Styles.registrationAnalysisCard} shadow-lg border-0 rounded-0`}>
+							<CardBody className={`${Styles.registrationAnalysisCardBody}`}>
+								<Row className={`${Styles.registrationAnalysisCardRow}`}>
+									<Col className={`${Styles.imageCol}`} lg={6} md={12} sm={12}>
 										<Image
-											
+											className={`${Styles.image}`}
 											src="/participation-1.png"
-											width={500}
-											height={400}
+											width={400}
+											height={300}
 											alt="Picture of the author that uses the platform to write journals."
 										/>
 									</Col>
 
-									<Col lg={6} md={6} sm={12}>
-
+									<Col className={`${Styles.infoCol}`} lg={6} md={12} sm={12}>
 										<Card.Title>Based off of the analytical analysis of the data: </Card.Title>
-										
-											<p>
-												The findings are suggestive that a little over a third of registered voters, voted. Just under a third of all registered voters did not vote.
-											</p>
-
-											<p>
-												Total number of people that are in the database(that are registered voters) are <span style={{color: 'green'}}>1000</span>. The number people who DID vote is <span style={{color: 'green'}}>685</span>. 
-											</p>
+										<p>
+											The findings are suggestive that a little over a third of registered voters, voted. Just under a third of all registered voters did not vote.
+										</p>
+										<p>
+											Total number of people that are in the database(that are registered voters) are <span style={{color: 'green'}}>1000</span>. The number people who DID vote is <span style={{color: 'green'}}>685</span>. 
+										</p>
 									</Col>
 								</Row>
 								
@@ -125,7 +121,7 @@ export default function Home() {
 						<Card className={`shadow-lg border-0 rounded-0`}>
 							<CardBody>
 								<Row>
-									<Col lg={6} md={6} sm={12}>
+									<Col lg={6} md={12} sm={12}>
 										<Image
 											src="/gender_distribution-1.png"
 											width={500}
@@ -134,7 +130,7 @@ export default function Home() {
 										/>
 									</Col>
 
-									<Col lg={6} md={6} sm={12}>
+									<Col lg={6} md={12} sm={12}>
 										<Card.Title>Based off of the analytical analysis of the data: </Card.Title>
 											<p>
 												The findings are suggestive that there were more males who voted than there were females.
