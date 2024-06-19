@@ -21,6 +21,7 @@ const Step2: React.FC<Step2Props> = ({ onPrevious, onSubmit, defaultValues }) =>
   const { register, handleSubmit, formState: { errors } } = useForm<Step2FormData>({ defaultValues });
 
   const handleFinalSubmit: SubmitHandler<Step2FormData> = data => {
+
     onSubmit(data);
   };
 
@@ -84,9 +85,9 @@ const Step2: React.FC<Step2Props> = ({ onPrevious, onSubmit, defaultValues }) =>
 					</Col>
 				</Row>
 
-				<Row>
-					<button type="button" onClick={onPrevious}>Previous</button>
-					<button type="submit">Submit</button>
+				<Row className={Styles.buttonsRow}>
+					<Button className={Styles.previousButton} type="button" onClick={onPrevious}>Previous</Button>
+					<Button className={Styles.submitButton} type="submit">Submit Vote</Button>
 				</Row>
 			</Container>
 			

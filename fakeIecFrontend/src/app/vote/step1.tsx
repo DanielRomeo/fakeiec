@@ -44,7 +44,9 @@ const Step1: React.FC<Step1Props> = ({ onNext, defaultValues }) => {
   const [selectedProvince, setSelectedProvince] = useState<string>(defaultValues.addressProvince);
 
   const onSubmit: SubmitHandler<Step1FormData> = (data) => {
-    onNext(data);
+
+	onNext(data);
+	
   };
 
   const provinceOptions = addressesArray.map((item) => item[0]);
@@ -151,8 +153,6 @@ const Step1: React.FC<Step1Props> = ({ onNext, defaultValues }) => {
 						))):
 					(<option></option>)
 
-					
-					
 					}
                   </select>
 

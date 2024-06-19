@@ -1,6 +1,5 @@
 @use '../main.module.scss';
 
-
 .main{
     height: 100vh;
 
@@ -13,8 +12,7 @@
 
         .stepCard{
             padding: 50px;
-            // color: red;
-            width: 900px;
+            width: 100%;
 
             .step1{ 
                 .step1inputBox{
@@ -33,8 +31,6 @@
                     background-color: main.$green;
                     &:hover{
                         background-color: main.$yellow;
-                        // background-color: red;
-                        // color: main.$dark-green;
                         color: black;
                         border: 1px solid black;
                     }
@@ -52,6 +48,40 @@
                         font-size: 25px;
                         font-weight: bold;
                     }
+
+                    .buttonsRow{
+                        // background-color: green;
+                        // border: 1px solid red;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: center;
+
+                        .previousButton{
+                            max-width: 200px;
+                            border: 1px solid black;
+                            border-radius: 0px;
+                            background-color: white;
+                            color: black;
+                            &:hover{
+                                background-color: grey;
+                                color: white;
+                                // border: 1px solid white;    
+                            }
+                        }
+                        .submitButton{
+                            max-width: 200px;
+                            border: 1px solid black;
+                            border-radius: 0px;
+                            background-color: darkcyan;
+                            color: white;
+    
+                            &:hover{
+                                background-color: main.$red;
+                            }
+                        }
+                    }
+
                 }
             }
         }

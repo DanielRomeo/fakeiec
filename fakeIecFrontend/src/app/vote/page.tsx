@@ -42,20 +42,22 @@ const Register: React.FC = () => {
 			<MainNavbar></MainNavbar>
 			<Container className={`${Styles.mainContainer}`}>
 				<Row>
-					<Card className={` ${Styles.stepCard} shadow-lg border-0 rounded-0 `}>
+					<Col style={{width: '100%'}} lg={12} md={12} sm={12}>
+						<Card className={` ${Styles.stepCard} shadow-lg border-0 rounded-0 `}>
 
-						{step === 1 && <Step1 onNext={handleNextStep} defaultValues={formData} />}
-						{step === 2 && (
-						<Step2
-							onPrevious={handlePreviousStep}
-							onSubmit={handleSubmit}
-							defaultValues={formData}
-						/>
-						)}
-					</Card>
+								{step === 1 && <Step1 onNext={handleNextStep} defaultValues={formData} />}
+								{step === 2 && (
+								<Step2
+									onPrevious={handlePreviousStep}
+									onSubmit={handleSubmit}
+									defaultValues={formData}
+								/>
+								)}
+						</Card>
+					</Col>
+					
 				</Row>
 			</Container>
-			
 		</div>
 	);
 };

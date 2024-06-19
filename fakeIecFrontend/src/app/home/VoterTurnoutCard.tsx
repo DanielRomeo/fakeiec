@@ -1,14 +1,13 @@
 import React, { PropsWithChildren, useEffect, useRef } from 'react';
 import AnimatedNumber from '../_components/AnimatedNumberComponent'
 import Card from 'react-bootstrap/Card';
-
 import Styles from '../_styles/home/totalVotesCard.module.scss'
 
 
 export const TotalVotesCard: React.FC = () => {
  
   return (
-    <div className='col-lg-4 col-md-4 col-sm-12'>
+    <div className='col-lg-6 col-md-6 col-sm-12'>
         <Card className={`shadow-lg border-0 rounded-0 `}>
             
             <Card.Body  >
